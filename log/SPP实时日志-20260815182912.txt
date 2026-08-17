@@ -1,0 +1,382 @@
+18:25:43.077> 正在连接[yjx][42:6C:DC:F5:63:CF]…
+18:25:44.428> 连接成功
+18:25:51.582> [BOOT] 初始化 USART3(ESP8266) @115200
+[BOOT] 开始 OTA_HTTP
+18:25:51.628> _Test()
+
+======== [OTA] 固件查询与下载 ========
+[OTA] 
+18:25:51.683> 步骤1: 初始化 ESP8266
+[OTA]   退出透传模式 (间隔1s 发 +++)
+
+18:25:58.040> [AT] 期待:'OK' | 结果:成功 (超时=3000ms)
+
+18:26:04.407> [AT] 期待:'OK' | 结果:超时 (超时=2000ms)
+[OTA]   WiFi连接 SSID='yjxhm'
+
+18:26:04.509> [AT] 期待:'OK' | 结果:成功 (超时=3000ms)
+
+18:26:13.560> [AT] 期待:'OK' | 结果:成功 (超时=8000ms)
+[OTA]   WiFi连接成功
+
+18:26:13.658> [AT] 期待:'OK' | 结果:成功 (超时=2000ms)
+
+18:26:13.773> [AT] 期待:'OK' | 结果:成功 (超时=2000ms)
+[OTA]   ESP826
+18:26:13.824> 6 就绪 (非透传命令模式)
+[OTA] 步骤2: HTTP 查询固�
+18:26:13.944> ��版本 (bemfa API)
+[OTA]   URL: http://apis.bemfa.com/vb/api/
+18:26:13.958> v1/firmwareVersion?openID=3f2d5feab40ea3844d23321f165ab2db&topic
+18:26:14.013> =ota&deviceType=3
+[OTA]   发送: AT+CIPSTART="TCP","apis.bemfa.com",80
+
+18:26:14.196> [AT] 期待:'CONNECT' | 结果:成功 (超时=15000ms)
+[OTA]   
+18:26:14.277> 连接 apis.bemfa.com:80 -> 成功
+[OTA]   HTTP 请求 (181字�
+18:26:14.333> ��):
+GET /vb/api/v1/firmwareVersion?openID=3f2d5feab40ea3844d23
+18:26:14.414> 321f165ab2db&topic=ota&deviceType=3 HTTP/1.1
+Host: apis.bemfa.c
+18:26:14.470> om
+User-Agent: ESP8266
+Accept: */*
+Connection: close
+
+
+18:26:14.580> [AT] 期待:'>' | 结果:成功 (超时=5000ms)
+[OTA]   CIPSEND: 就绪
+
+18:26:14.667> [OTA]   请求已发送, 接收数据(不打印,收完再打印)...
+
+18:26:15.097> 
+[OTA]   === 接收完成, 共 451 字节 ===
+[seg0] rigin: *
+18:26:15.177> 
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate, 
+18:26:15.233> value
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Last-Modified: Sa
+18:26:15.312> t, 15 Aug 2026 10:26:14 GMT
+X-Content-Type-Options: nosniff
+X
+
+18:26:15.607> [seg1] -Frame-Options: DENY
+X-Xss-Protection: 1; mode=block
+
+
+18:26:15.691> {"code":0,"msg":"success","data":{"url":"http://bin.bemfa.com/b/
+18:26:15.747> 340437/3BcM2YyZDVmZWFiNDBlYTM4NDRkMjMzMjFmMTY1YWIyZGI=ota.bin","version":4,"tag
+
+18:26:16.097> [seg2] ":"260815","size":29144,"unix":1786759403}}CLOSED
+
+
+18:26:16.381> [OTA]   === 打印完成, 共 3 段 ===
+
+18:26:22.742> [AT] 期待:'OK' | 结果:超时 (超时=2000ms)
+[OTA]   完整
+18:26:22.800> 响应 (451 字节), 分段打印:
+[seg0] rigin: *
+Cache-Contr
+18:26:22.848> ol: no-cache, no-store, max-age=0, must-revalidate, value
+Expir
+18:26:22.930> es: Thu, 01 Jan 1970 00:00:00 GMT
+Last-Modified: Sat, 15 Aug 20
+18:26:22.988> 26 10:26:14 GMT
+X-Content-Type-Options: nosniff
+X
+
+18:26:23.195> [seg1] -Frame-Options: DENY
+X-Xss-Protection: 1; mode=block
+
+
+18:26:23.275> {"code":0,"msg":"success","data":{"url":"http://bin.bemfa.com/b/
+18:26:23.331> 340437/3BcM2YyZDVmZWFiNDBlYTM4NDRkMjMzMjFmMTY1YWIyZGI=ota.bin","version":4,"tag
+
+18:26:23.590> [seg2] ":"260815","size":29144,"unix":1786759403}}CLOSED
+
+
+18:26:23.791> [OTA]   打印完成, 共 3 段\r
+[OTA] 步骤3: 解析 JSON
+[O
+18:26:23.849> TA]   JSON 起始偏移: 257 字节
+[OTA]   code=0 msg=success
+18:26:23.929> 
+[OTA]   version=4 size=29144 unix=1786759403
+[OTA]   tag=26081
+18:26:23.988> 5
+[OTA]   url=http://bin.bemfa.com/b/340437/3BcM2YyZDVmZWFiNDBl
+18:26:24.044> YTM4NDRkMjMzMjFmMTY1YWIyZGI=ota.bin
+[OTA] 步骤4: 下载固件
+18:26:24.124>  (从元数据URL写入W25Q128)
+
+
+[OTA] ======= 步骤4: 固�
+18:26:24.204> ��下载 (codeDownload) =======
+[OTA]   下载URL: http://bin.b
+18:26:24.261> emfa.com/b/340437/3BcM2YyZDVmZWFiNDBlYTM4NDRkMjMzMjFmMTY1YWIyZGI
+18:26:24.322> =ota.bin
+[OTA] 4.1 解析 URL...
+[OTA]   host=bin.bemfa.com po
+18:26:24.398> rt=80 ssl=0
+[OTA]   path=/b/340437/3BcM2YyZDVmZWFiNDBlYTM4NDRkM
+18:26:24.475> jMzMjFmMTY1YWIyZGI=ota.bin
+[OTA] 4.2 初始化 W25Q128 并擦�
+18:26:24.533> �(64KB块擦除)...
+[OTA]   W25Q128 ID: 0xEF17 (expect EF40/EF1
+18:26:24.589> 8)
+[OTA]   需擦除 8 个块 (每块 64KB, 共 512 KB)...
+
+18:26:24.774> [OTA]   擦除进度: 1/8 块 (0x00000000)
+
+18:26:24.998> [OTA]   擦除进度: 2/8 块 (0x00010000)
+
+18:26:25.226> [OTA]   擦除进度: 3/8 块 (0x00020000)
+
+18:26:25.434> [OTA]   擦除进度: 4/8 块 (0x00030000)
+
+18:26:25.717> [OTA]   擦除进度: 5/8 块 (0x00040000)
+
+18:26:25.911> [OTA]   擦除进度: 6/8 块 (0x00050000)
+
+18:26:26.146> [OTA]   擦除进度: 7/8 块 (0x00060000)
+
+18:26:26.404> [OTA]   擦除进度: 8/8 块 (0x00070000)
+[OTA]   W25Q128 擦�
+18:26:26.485> ��完成
+[OTA] 4.4 连接 bin.bemfa.com:80 (透传模式)...
+
+18:26:26.579> [AT] 期待:'OK' | 结果:成功 (超时=3000ms)
+
+18:26:26.739> [AT] 期待:'CONNECT' | 结果:成功 (超时=15000ms)
+[OTA]   
+18:26:26.820> 连接结果: 成功
+[OTA] 4.5 发送 HTTP GET 请求...
+[OTA]
+18:26:26.879>    HTTP 请求长度=193 字节
+[REQ0] GET /b/340437/3BcM2YyZDV
+18:26:26.953> mZWFiNDBlYTM4NDRkMjMzMjFmMTY1YWIyZGI=ota.bin HTTP/1.1
+Host: bin
+18:26:27.033> .bemfa.com
+User-Agent: STM32F4-ESP8266-OTA
+Accept: application
+18:26:27.063> /octet-stream, */*
+Connection: close
+
+
+
+18:26:27.249> [AT] 期待:'>' | 结果:成功 (超时=5000ms)
+
+18:26:27.339> [OTA]   HTTP 请求已发送 (透传), 开始接收 (双4KB缓�
+18:26:27.411> �)...
+[OTA] 4.6 开始接收 (双4KB缓冲静默模式, 下载完成后打印结果)...
+
+18:26:39.983> [OTA]   警告: 双缓冲溢出 3 次 (主循环写入Flash过�
+18:26:40.035> �)
+[OTA] 4.7 退出透传模式, 关闭 TCP...
+
+18:26:46.366> [AT] 期待:'OK' | 结果:成功 (超时=3000ms)
+
+18:26:46.465> [AT] 期待:'OK' | 结果:成功 (超时=2000ms)
+[OTA] 4.8 解�
+18:26:46.527> ��下载结果...
+[OTA]   W25Q128 总写入 = 29522 字节
+[OT
+18:26:46.582> A] === W25Q128 数据转储 (29522 字节) ===
+[OTA] --- 前 51
+18:26:46.662> 2 字节 ---
+[OTA] 00000: 48 54 54 50 2F 31 2E 31 20 32 30 30 20 4F 4B 0D |HTTP/1.1 200 OK.|
+
+18:26:47.007> [OTA] 00010: 0A 53 65 72 76 65 72 3A 20 6E 67 69 6E 78 2F 31 |.Server: nginx/1|
+
+18:26:47.336> [OTA] 00020: 2E 32 37 2E 32 0D 0A 44 61 74 65 3A 20 53 61 74 |.27.2..Date: Sat|
+
+18:26:47.694> [OTA] 00030: 2C 20 31 35 20 41 75 67 20 32 30 32 36 20 31 30 |, 15 Aug 2026 10|
+
+18:26:48.019> [OTA] 00040: 3A 32 36 3A 32 37 20 47 4D 54 0D 0A 43 6F 6E 74 |:26:27 GMT..Cont|
+
+18:26:48.360> [OTA] 00050: 65 6E 74 2D 54 79 70 65 3A 20 61 70 70 6C 69 63 |ent-Type: applic|
+
+18:26:48.692> [OTA] 00060: 61 74 69 6F 6E 2F 6F 63 74 65 74 2D 73 74 72 65 |ation/octet-stre|
+
+18:26:49.025> [OTA] 00070: 61 6D 0D 0A 43 6F 6E 74 65 6E 74 2D 4C 65 6E 67 |am..Content-Leng|
+
+18:26:49.362> [OTA] 00080: 74 68 3A 20 32 39 31 34 34 0D 0A 43 6F 6E 6E 65 |th: 29144..Conne|
+
+18:26:49.706> [OTA] 00090: 63 74 69 6F 6E 3A 20 63 6C 6F 73 65 0D 0A 41 63 |ction: close..Ac|
+
+18:26:50.052> [OTA] 000A0: 63 65 70 74 2D 52 61 6E 67 65 73 3A 20 62 79 74 |cept-Ranges: byt|
+
+18:26:50.388> [OTA] 000B0: 65 73 0D 0A 45 54 61 67 3A 20 22 66 34 62 32 65 |es..ETag: "f4b2e|
+
+18:26:50.721> [OTA] 000C0: 39 65 38 34 33 38 64 37 31 36 64 33 65 35 32 34 |9e8438d716d3e524|
+
+18:26:51.059> [OTA] 000D0: 34 34 31 38 36 34 66 64 34 64 31 22 0D 0A 4C 61 |441864fd4d1"..La|
+
+18:26:51.390> [OTA] 000E0: 73 74 2D 4D 6F 64 69 66 69 65 64 3A 20 46 72 69 |st-Modified: Fri|
+
+18:26:51.723> [OTA] 000F0: 2C 20 31 34 20 41 75 67 20 32 30 32 36 20 30 37 |, 14 Aug 2026 07|
+
+18:26:52.061> [OTA] 00100: 3A 33 34 3A 35 33 20 47 4D 54 0D 0A 78 2D 63 6F |:34:53 GMT..x-co|
+
+18:26:52.407> [OTA] 00110: 73 2D 68 61 73 68 2D 63 72 63 36 34 65 63 6D 61 |s-hash-crc64ecma|
+
+18:26:52.740> [OTA] 00120: 3A 20 31 33 34 37 30 30 34 34 38 33 36 32 31 31 |: 13470044836211|
+
+18:26:53.075> [OTA] 00130: 30 35 33 35 34 35 0D 0A 78 2D 63 6F 73 2D 72 65 |053545..x-cos-re|
+
+18:26:53.406> [OTA] 00140: 71 75 65 73 74 2D 69 64 3A 20 4E 6D 45 34 4D 44 |quest-id: NmE4MD|
+
+18:26:53.749> [OTA] 00150: 4E 6C 5A 44 4A 66 5A 47 49 78 4E 44 64 69 4D 47 |NlZDJfZGIxNDdiMG|
+
+18:26:54.083> [OTA] 00160: 4A 66 4E 44 51 33 5A 56 38 78 4D 44 4D 30 4D 54 |JfNDQ3ZV8xMDM0MT|
+
+18:26:54.415> [OTA] 00170: 5A 6D 5A 41 3D 3D 0D 0A 0D 0A 98 12 00 10 55 02 |ZmZA==........U.|
+
+18:26:54.748> [OTA] 00180: 0A 08 5D 02 0A 08 5F 02 0A 08 61 02 0A 08 63 02 |..]..._...a...c.|
+
+18:26:55.091> [OTA] 00190: 0A 08 65 02 0A 08 00 00 00 00 00 00 00 00 00 00 |..e.............|
+
+18:26:55.438> [OTA] 001A0: 00 00 00 00 00 00 9D 01 0A 08 69 02 0A 08 00 00 |..........i.....|
+
+18:26:55.771> [OTA] 001B0: 00 00 F1 01 0A 08 05 27 0A 08 6F 02 0A 08 6F 02 |.......'..o...o.|
+
+18:26:56.120> [OTA] 001C0: 0A 08 6F 02 0A 08 6F 02 0A 08 6F 02 0A 08 6F 02 |..o...o...o...o.|
+
+18:26:56.452> [OTA] 001D0: 0A 08 6F 02 0A 08 6F 02 0A 08 6F 02 0A 08 6F 02 |..o...o...o...o.|
+
+18:26:56.783> [OTA] 001E0: 0A 08 6F 02 0A 08 6F 02 0A 08 6F 02 0A 08 6F 02 |..o...o...o...o.|
+
+18:26:57.149> [OTA] 001F0: 0A 08 6F 02 0A 08 6F 02 0A 08 6F 02 0A 08 6F 02 |..o...o...o...o.|
+
+18:26:57.464> [OTA] --- 每 2KB 采样 ---
+[OTA] 00800: 44 EA 47 54 0A 30 02 D5 00 20 01 46 E9 E7 01 05
+
+18:26:57.796> [OTA] 01000: 38 49 08 60 50 20 FF F7 96 FF 3B A0 FE F7 5F FD
+
+18:26:58.128> [OTA] 01800: 1B 49 08 31 08 60 08 46 00 68 40 F4 00 40 08 60
+
+18:26:58.427> [OTA] 02000: 60 1E 44 B2 00 2C E0 DA 70 BD BC 82 40 42 00 80
+
+18:26:58.761> [OTA] 02800: 81 00 00 F0 04 FC 64 1C 05 2C F5 D3 0C 48 00 F0
+
+18:26:59.067> [OTA] 03000: 45 00 4F F0 01 09 01 E0 4F F0 00 09 00 BF 85 F3
+
+18:26:59.374> [OTA] 03800: 29 1E 00 00 36 36 00 00 00 00 56 36 00 00 00 08
+
+18:26:59.706> [OTA] 04000: FF 20 22 2C 20 20 00 10 11 40 C0 7E 40 40 3F 22
+
+18:27:00.035> [OTA] 04800: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:00.344> [OTA] 05000: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:00.654> [OTA] 05800: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:00.987> [OTA] 06000: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:01.279> [OTA] 06800: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:01.616> [OTA] 07000: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:01.927> [OTA] --- 最后 512 字节 ---
+[OTA] 07152: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:02.285> [OTA] 07162: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:02.604> [OTA] 07172: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:02.913> [OTA] 07182: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:03.218> [OTA] 07192: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:03.544> [OTA] 071A2: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:03.881> [OTA] 071B2: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:04.170> [OTA] 071C2: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:04.502> [OTA] 071D2: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:04.807> [OTA] 071E2: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:05.139> [OTA] 071F2: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:05.450> [OTA] 07202: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:05.773> [OTA] 07212: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:06.084> [OTA] 07222: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:06.391> [OTA] 07232: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:06.705> [OTA] 07242: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:07.038> [OTA] 07252: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:07.345> [OTA] 07262: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:07.677> [OTA] 07272: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:07.977> [OTA] 07282: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:08.316> [OTA] 07292: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:08.624> [OTA] 072A2: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:08.943> [OTA] 072B2: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:09.260> [OTA] 072C2: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:09.568> [OTA] 072D2: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:09.881> [OTA] 072E2: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:10.213> [OTA] 072F2: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:10.527> [OTA] 07302: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:10.850> [OTA] 07312: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:11.159> [OTA] 07322: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:11.464> [OTA] 07332: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:11.810> [OTA] 07342: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+18:27:12.069> [OTA] === 转储结束 ===
+
+18:27:12.253> [OTA]   HTTP头长度 = 378 字节
+[OTA]   Content-Length = 291
+18:27:12.331> 44 字节
+[OTA]   固件大小 = 29144 字节 (总接收 - HTTP
+18:27:12.405> 头)
+[OTA]   固件前16字节(向量表):
+[OTA]   98 12 00 10
+18:27:12.443>  55 02 0A 08
+[OTA]   5D 02 0A 08 5F 02 0A 08
+[OTA] ======= 固
+18:27:12.526> 件下载到 W25Q128: 成功! =======
+
+[OTA] 步骤5: 校验�
+18:27:12.606> �数据 vs 实际下载
+[OTA]   元数据声明 size=29144 字�
+18:27:12.660> ��
+[OTA]   HTTP Content-Length=29144 字节
+[OTA]   W25Q128 �
+18:27:12.715> �写入=29522 字节 (含HTTP头)
+[OTA]   固件实际大小=29
+18:27:12.800> 144 字节 (去掉HTTP头378字节)
+[OTA]   校验通过: 大�
+18:27:12.859> �匹配
+
+[OTA] ===== OTA HTTP Test (查询+下载) 全部成�
+18:27:12.914> �! =====
+[OTA]   固件版本号(tag+version): 260815_V4
+[OTA]
+18:27:13.009>    固件存储: W25Q128 @ 0x00000000+378, 大小=29144 字节
+
+18:27:13.063> [OTA]   下一步: 从W25Q128搬运到内部Flash并跳转\r
+[BO
+18:27:13.117> OT] OTA_HTTP_Test() 执行完毕, 返回启动流程
+

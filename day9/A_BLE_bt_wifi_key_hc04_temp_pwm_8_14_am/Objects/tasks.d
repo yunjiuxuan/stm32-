@@ -1,0 +1,16 @@
+.\objects\tasks.o: tasks.c
+.\objects\tasks.o: D:\develop\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\tasks.o: D:\develop\Keil\ARM\ARMCC\Bin\..\include\string.h
+.\objects\tasks.o: .\include\FreeRTOS.h
+.\objects\tasks.o: D:\develop\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\tasks.o: D:\develop\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\tasks.o: .\include\FreeRTOSConfig.h
+.\objects\tasks.o: .\include\projdefs.h
+.\objects\tasks.o: .\include\portable.h
+.\objects\tasks.o: .\include\deprecated_definitions.h
+.\objects\tasks.o: .\portable\RVDS\ARM_CM4F\portmacro.h
+.\objects\tasks.o: .\include\mpu_wrappers.h
+.\objects\tasks.o: .\include\task.h
+.\objects\tasks.o: .\include\list.h
+.\objects\tasks.o: .\include\timers.h
+.\objects\tasks.o: .\include\StackMacros.h

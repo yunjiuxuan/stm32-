@@ -1,0 +1,178 @@
+17:18:31.399> [BOOT] 初始化 USART3(ESP8266) @115200
+[BOOT] 开始 OTA_HTTP
+17:18:31.472> _Test()
+
+======== [OTA] 固件查询与下载 ========
+[OTA] 
+17:18:31.556> 步骤1: 初始化 ESP8266
+[OTA]   退出透传模式 (间隔1s 发 +++)
+
+17:18:37.878> [AT] 期待:'OK' | 结果:成功 (超时=3000ms)
+
+17:18:44.243> [AT] 期待:'OK' | 结果:超时 (超时=2000ms)
+[OTA]   WiFi连接 SSID='yjxhm'
+
+17:18:44.341> [AT] 期待:'OK' | 结果:成功 (超时=3000ms)
+
+17:18:53.418> [AT] 期待:'OK' | 结果:成功 (超时=8000ms)
+[OTA]   WiFi连接成功
+
+17:18:53.516> [AT] 期待:'OK' | 结果:成功 (超时=2000ms)
+
+17:18:53.595> [AT] 期待:'OK' | 结果:成功 (超时=2000ms)
+[OTA]   ESP826
+17:18:53.675> 6 就绪 (非透传命令模式)
+[OTA] 步骤2: HTTP 查询固�
+17:18:53.737> ��版本 (bemfa API)
+[OTA]   URL: http://apis.bemfa.com/vb/api/
+17:18:53.815> v1/firmwareVersion?openID=3f2d5feab40ea3844d23321f165ab2db&topic
+17:18:53.893> =ota&deviceType=3
+[OTA]   发送: AT+CIPSTART="TCP","apis.bemfa.com",80
+
+17:18:54.039> [AT] 期待:'CONNECT' | 结果:成功 (超时=15000ms)
+[OTA]   
+17:18:54.115> 连接 apis.bemfa.com:80 -> 成功
+[OTA]   HTTP 请求 (181字�
+17:18:54.184> ��):
+GET /vb/api/v1/firmwareVersion?openID=3f2d5feab40ea3844d23
+17:18:54.260> 321f165ab2db&topic=ota&deviceType=3 HTTP/1.1
+Host: apis.bemfa.c
+17:18:54.335> om
+User-Agent: ESP8266
+Accept: */*
+Connection: close
+
+
+17:18:54.397> [AT] 期待:'>' | 结果:成功 (超时=5000ms)
+[OTA]   CIPSEND: 就绪
+
+17:18:54.483> [OTA]   请求已发送, 接收数据(不打印,收完再打印)...
+
+17:18:54.916> 
+[OTA]   === 接收完成, 共 344 字节 ===
+[seg0] 0:00:00 G
+17:18:54.994> MT
+Last-Modified: Sat, 15 Aug 2026 09:18:54 GMT
+X-Content-Type
+17:18:55.076> -Options: nosniff
+X-Frame-Options: DENY
+X-Xss-Protection: 1; m
+17:18:55.113> ode=block
+
+{"code":0,"msg":"success","data":{"url":"http://bi
+
+17:18:55.454> [seg1] n.bemfa.com/b/340437/3BcM2YyZDVmZWFiNDBlYTM4NDRkMjMzMjFmM
+17:18:55.512> TY1YWIyZGI=ota.bin","version":4,"tag":"260815","size":29144,"unix":1786759403}}CLOSED
+
+
+17:18:55.845> [OTA]   === 打印完成, 共 2 段 ===
+
+17:19:02.197> [AT] 期待:'OK' | 结果:超时 (超时=2000ms)
+[OTA]   完整
+17:19:02.257> 响应 (344 字节), 分段打印:
+[seg0] 0:00:00 GMT
+Last-Mod
+17:19:02.336> ified: Sat, 15 Aug 2026 09:18:54 GMT
+X-Content-Type-Options: no
+17:19:02.370> sniff
+X-Frame-Options: DENY
+X-Xss-Protection: 1; mode=block
+
+17:19:02.457> 
+{"code":0,"msg":"success","data":{"url":"http://bi
+
+17:19:02.659> [seg1] n.bemfa.com/b/340437/3BcM2YyZDVmZWFiNDBlYTM4NDRkMjMzMjFmM
+17:19:02.713> TY1YWIyZGI=ota.bin","version":4,"tag":"260815","size":29144,"unix":1786759403}}CLOSED
+
+
+17:19:02.969> [OTA]   打印完成, 共 2 段
+[OTA] 步骤3: 解析 JSON
+[OT
+17:19:03.029> A]   JSON 起始偏移: 150 字节
+[OTA]   code=0 msg=success
+
+17:19:03.109> [OTA]   version=4 size=29144 unix=1786759403
+[OTA]   tag=260815
+17:19:03.164> 
+[OTA]   url=http://bin.bemfa.com/b/340437/3BcM2YyZDVmZWFiNDBlY
+17:19:03.246> TM4NDRkMjMzMjFmMTY1YWIyZGI=ota.bin
+[OTA] 步骤4: 下载固件 
+17:19:03.299> (从元数据URL写入W25Q128)
+
+
+[OTA] ======= 步骤4: 固�
+17:19:03.403> �下载 (codeDownload) =======
+[OTA]   下载URL: http://bin.be
+17:19:03.421> mfa.com/b/340437/3BcM2YyZDVmZWFiNDBlYTM4NDRkMjMzMjFmMTY1YWIyZGI=
+17:19:03.502> ota.bin
+[OTA] 4.1 解析 URL...
+[OTA]   host=bin.bemfa.com por
+17:19:03.582> t=80 ssl=0
+[OTA]   path=/b/340437/3BcM2YyZDVmZWFiNDBlYTM4NDRkMj
+17:19:03.637> MzMjFmMTY1YWIyZGI=ota.bin
+[OTA] 4.2 初始化 W25Q128 并擦除
+17:19:03.698> 扇区...
+[OTA]   W25Q128 ID: 0xEF17 (expect EF40/EF18)
+[OTA] 
+17:19:03.773>   需擦除 128 个扇区 (每扇区 4KB, 共 512 KB)...
+
+17:19:05.181> [OTA]   擦除进度: 16/128 扇区 (0x0000F000)
+
+17:19:06.611> [OTA]   擦除进度: 32/128 扇区 (0x0001F000)
+
+17:19:08.042> [OTA]   擦除进度: 48/128 扇区 (0x0002F000)
+
+17:19:09.490> [OTA]   擦除进度: 64/128 扇区 (0x0003F000)
+
+17:19:10.917> [OTA]   擦除进度: 80/128 扇区 (0x0004F000)
+
+17:19:12.354> [OTA]   擦除进度: 96/128 扇区 (0x0005F000)
+
+17:19:13.762> [OTA]   擦除进度: 112/128 扇区 (0x0006F000)
+
+17:19:15.207> [OTA]   擦除进度: 128/128 扇区 (0x0007F000)
+[OTA]   W25Q1
+17:19:15.262> 28 擦除完成
+[OTA] 4.4 连接 bin.bemfa.com:80 (透传模式)...
+
+17:19:15.367> [AT] 期待:'OK' | 结果:成功 (超时=3000ms)
+
+17:19:15.525> [AT] 期待:'CONNECT' | 结果:成功 (超时=15000ms)
+[OTA]   
+17:19:15.580> 连接结果: 成功
+[OTA] 4.5 发送 HTTP GET 请求...
+[OTA]
+17:19:15.639>    HTTP 请求长度=193 字节
+[REQ0] GET /b/340437/3BcM2YyZDV
+17:19:15.721> mZWFiNDBlYTM4NDRkMjMzMjFmMTY1YWIyZGI=ota.bin HTTP/1.1
+Host: bin
+17:19:15.776> .bemfa.com
+User-Agent: STM32F4-ESP8266-OTA
+Accept: application
+17:19:15.831> /octet-stream, */*
+Connection: close
+
+
+
+17:19:16.003> [AT] 期待:'>' | 结果:成功 (超时=5000ms)
+
+17:19:16.085> [OTA]   HTTP 请求已发送 (透传), 开始接收...
+[OTA] 4.
+17:19:16.169> 6 开始接收 (静默模式, 下载完成后打印结果)...
+
+17:19:28.301> [OTA] 4.7 退出透传模式, 关闭 TCP...
+
+17:19:34.621> [AT] 期待:'OK' | 结果:成功 (超时=3000ms)
+
+17:19:34.705> [AT] 期待:'OK' | 结果:成功 (超时=2000ms)
+[OTA] 4.8 解�
+17:19:34.759> ��下载结果...
+[OTA]   W25Q128 总写入 = 10795 字节
+
+17:19:35.018> [OTA] 错误: 未找到 HTTP 头结束符
+[OTA]   前64字节: 
+17:19:35.076> 48 54 54 50 2F 31 2E 31
+[OTA] 错误: 固件下载到 W25Q128 �
+17:19:35.132> ��败, OTA 终止
+[BOOT] OTA_HTTP_Test() 执行完毕, 返回启动流程
+
